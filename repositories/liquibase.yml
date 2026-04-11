@@ -1,0 +1,10 @@
+repository:
+  name: liquibase
+  format: LIST
+  key:
+    url: https://repo.liquibase.com/liquibase.asc
+    file: /usr/share/keyrings/liquibase-keyring.gpg
+  body: |
+    deb [arch=amd64 signed-by=/usr/share/keyrings/liquibase-keyring.gpg] https://package.liquibase.com stable main
+  packages:
+    - liquibase

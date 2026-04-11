@@ -1,0 +1,15 @@
+repository:
+  name: cursor
+  format: DEB822 # DEB822 (default) or LIST
+  key:
+    url: https://downloads.cursor.com/keys/anysphere.asc
+    file: /etc/apt/keyrings/cursor.gpg # will default to /etc/apt/keyrings/{name}.gpg
+  body: |
+    Types: deb
+    URIs: https://downloads.cursor.com/aptrepo
+    Suites: stable
+    Components: main
+    Architectures: amd64,arm64
+    Signed-By: /etc/apt/keyrings/cursor.gpg
+  packages:
+    - cursor

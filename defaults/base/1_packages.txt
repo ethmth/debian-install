@@ -1,0 +1,17 @@
+ecryptfs-utils
+zip
+unzip
+cryptsetup
+sshpass
+fzf
+vim
+nano
+curl
+wget
+socat
+net-tools
+netcat-openbsd
+tmux
+jq
+yq
+ca-certificates

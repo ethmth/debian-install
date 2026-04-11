@@ -1,0 +1,12 @@
+repository:
+  name: megasync
+  format: LIST
+  key:
+    url: https://mega.nz/keys/MEGA_signing.key
+    file: /usr/share/keyrings/meganz-archive-keyring.gpg
+  body: |
+    deb [signed-by=/usr/share/keyrings/meganz-archive-keyring.gpg] https://mega.nz/linux/repo/Debian_13/ ./
+  packages:
+    - megasync
+    - thunar-megasync
+    - megacmd

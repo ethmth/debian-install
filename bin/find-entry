@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+SOURCE="${1:-${BASH_SOURCE[0]}}"
+TARGET="${2:-entry.sh}"
+DIR="$(cd "$(dirname "$SOURCE")" && pwd)"
+
+while true; do
+    if [[ -f "$DIR/$TARGET" ]]; then
+        echo "$DIR/$TARGET"
+        return 0 2>/dev/null || exit 0
+    fi
+    PARENT="$(dirname "$DIR")"
+    if [[ "$PARENT" == "$DIR" ]]; then
+        return 1 2>/dev/null || exit 1
+    fi
+    DIR="$PARENT"
+done

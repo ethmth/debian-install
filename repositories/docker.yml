@@ -1,0 +1,15 @@
+repository:
+  name: docker
+  format: DEB822 # DEB822 (default) or LIST
+  key:
+    url: https://download.docker.com/linux/debian/gpg
+    file: /etc/apt/keyrings/docker.asc
+  body: |
+    Types: deb
+    URIs: https://download.docker.com/linux/debian
+    Suites: $(. /etc/os-release && echo "$VERSION_CODENAME")
+    Components: stable
+    Architectures: $(dpkg --print-architecture)
+    Signed-By: /etc/apt/keyrings/docker.asc
+  packages:
+    - cursor
