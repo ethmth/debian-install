@@ -10,6 +10,7 @@ systemctl enable --now systemd-homed
 # Create a user
 homectl create e \
   --storage=luks \
+  --disk-size=10G \
   --shell=/bin/bash \
   --member-of=sudo
 
