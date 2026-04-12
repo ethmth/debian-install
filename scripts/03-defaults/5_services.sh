@@ -8,3 +8,5 @@ for service in $services; do
   echo "systemctl enable $service"
   systemctl enable "$service"
 done
+
+echo "Reboot"
