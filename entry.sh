@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CONFIG_FILE="$SCRIPT_DIR/config/install.conf"
-
-if [ -f "$CONFIG_FILE" ]; then
-  source "$CONFIG_FILE"
-fi
+BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CONFIG_FILE="$BASE_DIR/config/install.conf"
 
 check_root() {
   if [ "$EUID" -ne 0 ]; then
@@ -27,3 +23,14 @@ check_config() {
     exit 1
   fi
 }
+
+export_config() {
+  if [ -f "$CONFIG_FILE" ]; then
+    source "$CONFIG_FILE"
+
+    # split DEFAULTS into
+    DEFAULTS=$(echo "$DEFAULTS" | tr ',' '\n')
+    export DEFAULTS="$DEFAULTS"
+  fi
+}
+export_config

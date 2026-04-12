@@ -5,3 +5,6 @@ check_root && check_config
 
 echo "Hello $DEFAULTS"
 
+for DEFAULT in $DEFAULTS; do
+  echo "$BASE_DIR/defaults/$DEFAULT/1_packages.txt"
+done
