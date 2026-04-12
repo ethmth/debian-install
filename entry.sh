@@ -33,4 +33,17 @@ export_config() {
     export DEFAULTS="$DEFAULTS"
   fi
 }
+
 export_config
+
+parse_defaults_files() {
+  local file="$1"
+  for DEFAULT in $DEFAULTS; do
+    local path="$BASE_DIR/defaults/$DEFAULT/$file"
+    [ -f "$path" ] || continue
+    sed 's/#.*//' "$path"
+  done \
+    | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' \
+    | grep -v '^$' \
+    | sort -u
+}
