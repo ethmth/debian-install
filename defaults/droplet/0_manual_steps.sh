@@ -26,6 +26,9 @@ systemctl restart sshd
 mkdir ~/.ssh
 vim ~/.ssh/authorized_keys
 
+# While logged in as e, run this as root in a separate terminal:
+homectl update e --ssh-authorized-keys=/home/e/.ssh/authorized_keys
+
 # Logout and log back in
 
 # In the VPS console, block all traffic except SSH (22), HTTP (80), and HTTPS (443)
