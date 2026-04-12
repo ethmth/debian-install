@@ -1,7 +1,7 @@
-ecryptfs-utils
 zip
 unzip
 cryptsetup
+systemd-homed
 sshpass
 fzf
 vim
@@ -15,3 +15,4 @@ tmux
 jq
 yq
 ca-certificates
+fastfetch
