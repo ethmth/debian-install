@@ -39,6 +39,6 @@ sudo systemctl restart sshd
 # In the VPS console, block all traffic except SSH (22), HTTP (80), and HTTPS (443)
 
 # Install git and clone this repository
-sudo apt install git -y
+sudo apt install fzf jq yq git curl wget -y
 mkdir -p ~/programs
 git clone https://github.com/ethmth/debian-install ~/programs/debian-install

@@ -14,5 +14,4 @@ netcat-openbsd
 tmux
 jq
 yq
-ca-certificates
 fastfetch
