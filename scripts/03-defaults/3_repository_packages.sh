@@ -2,7 +2,8 @@
 source "$(find-entry $BASH_SOURCE[0])"
 check_root && check_config
 
-packages=$(parse_defaults_files "3_repository_packages.txt")
+packages=$(parse_defaults_files "1_packages.txt")
+packages=$(echo "$packages" | xargs)
 
-apt update
-apt install "$packages" -y
+apt update && apt upgrade -y
+apt install $packages -y

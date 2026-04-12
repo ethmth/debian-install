@@ -41,7 +41,7 @@ parse_defaults_files() {
   for DEFAULT in $DEFAULTS; do
     local path="$BASE_DIR/defaults/$DEFAULT/$file"
     [ -f "$path" ] || continue
-    sed 's/#.*//' "$path"
+    { sed 's/#.*//' "$path"; echo; }
   done \
     | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' \
     | grep -v '^$' \
